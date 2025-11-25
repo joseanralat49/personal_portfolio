@@ -46,7 +46,7 @@ function Experience() {
           Experience
         </h2>
         <a 
-        href='public/Resume.pdf'
+        href='/Resume.pdf'
         download
         target="_blank"
         rel="noopener noreferrer"
