@@ -9,21 +9,24 @@ function Projects() {
       tools: ["Flutter", "Dart", "Firebase", "Clean Architecture"],
       link: "https://github.com/joseanralat49/workoutApp",
       images: ["src/assets/images/pic1w.png","src/assets/images/pic2w.png","src/assets/images/pic3w.png","src/assets/images/pic4w.png","src/assets/images/pic5w.png","src/assets/images/pic6w.png"],
-      icons: [<FaGithub size={22}/>]
+      icons: [<FaGithub size={22}/>],
+      video: "",
     },
     {
       name: "Expense Tracker",
       tools: ["Python", "pandas", "tkinter"],
       link: "https://github.com/joseanralat49/expense_tracker/tree/main",
       images: ["src/assets/images/exp1.png","src/assets/images/exp2.png"],
-      icons: [<FaGithub size={22}/>]
+      icons: [<FaGithub size={22}/>],
+      video: "",
     },
     {
       name:"Personal Portfolio Website",
       tools:["React", "Tailwind CSS", "JavaScript", "HTML"],
       link: "",
       images:[],
-      icons:[<FaExternalLinkAlt size={20}/>]
+      icons:[<FaExternalLinkAlt size={20}/>, <FaGithub size={22}/>],
+      video: "/personalportfoliovid.mp4",
     }
   ];
 
@@ -78,6 +81,15 @@ function Projects() {
                     onClick={()=> setZoomImage(image)}
                   />
                   ))}
+                  {project.video &&
+                    <video
+                  autoPlay 
+                  loop
+                  controls
+                    src={project.video}
+                    alt={project.name}
+                    className="w-full h-auto"
+                  />}
                 </div>
               </div>
 
