@@ -28,12 +28,12 @@ function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-8">
             <img
               className="h-40 w-40 hover:animate-pulse"
-              src="src/assets/images/logo-ucm.png"
+              src="/images/logo-ucm.png"
               alt="Logo of UCM"
             />
             <img
               className="h-40 w-40 hover:animate-pulse"
-              src="src/assets/images/logo-uprm.png"
+              src="/images/logo-uprm.png"
               alt="Logo of UPRM"
             />
           </div>
