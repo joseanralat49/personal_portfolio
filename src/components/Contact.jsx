@@ -35,13 +35,13 @@ function Contact() {
           ))}
         </div>
       </div>
-      <div className="flex-1 flex justify-center -mt-40">
+      {/* {<div className="flex-1 flex justify-center -mt-40">
         <img
         src=""
         alt="Imagen Profesional"
         className="w-auto h-auto rounded-2xl"
          />
-      </div>
+      </div>} */}
       </div>
     </section>
   );
