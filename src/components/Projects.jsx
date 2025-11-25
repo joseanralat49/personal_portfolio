@@ -8,7 +8,7 @@ function Projects() {
       name: "Workout Logger",
       tools: ["Flutter", "Dart", "Firebase", "Clean Architecture"],
       link: "https://github.com/joseanralat49/workoutApp",
-      images: ["src/assets/images/pic1w.png","src/assets/images/pic2w.png","src/assets/images/pic3w.png","src/assets/images/pic4w.png","src/assets/images/pic5w.png","src/assets/images/pic6w.png"],
+      images: ["/images/pic1w.png","/images/pic2w.png","/images/pic3w.png","/images/pic4w.png","/images/pic5w.png","/images/pic6w.png"],
       icons: [<FaGithub size={22}/>],
       video: "",
     },
@@ -16,7 +16,7 @@ function Projects() {
       name: "Expense Tracker",
       tools: ["Python", "pandas", "tkinter"],
       link: "https://github.com/joseanralat49/expense_tracker/tree/main",
-      images: ["src/assets/images/exp1.png","src/assets/images/exp2.png"],
+      images: ["/images/exp1.png","/images/exp2.png"],
       icons: [<FaGithub size={22}/>],
       video: "",
     },
@@ -70,7 +70,8 @@ function Projects() {
                 ))}
               </div>
 
-              <div className="mt-4 max-h-0 opacity-0 group-hover:max-h-64 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+              <div className="mt-4 max-h-64 opacity-100 overflow-hidden
+                md:max-h-0 md:opacity-0 md:group-hover:max-h-64 md:group-hover:opacity-100">
                 <div className="flex gap-2">
                   {project.images.map((image) => (
                     <img
