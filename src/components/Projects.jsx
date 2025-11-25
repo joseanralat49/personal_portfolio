@@ -1,37 +1,48 @@
-import { FaGithub,FaExternalLinkAlt } from "react-icons/fa";
-import {useState} from "react";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useState } from "react";
 
 function Projects() {
   const [zoomImage, setZoomImage] = useState(null);
+
   const projects = [
     {
       name: "Workout Logger",
       tools: ["Flutter", "Dart", "Firebase", "Clean Architecture"],
       link: "https://github.com/joseanralat49/workoutApp",
-      images: ["/images/pic1w.png","/images/pic2w.png","/images/pic3w.png","/images/pic4w.png","/images/pic5w.png","/images/pic6w.png"],
-      icons: [<FaGithub size={22}/>],
+      images: [
+        "/images/pic1w.png",
+        "/images/pic2w.png",
+        "/images/pic3w.png",
+        "/images/pic4w.png",
+        "/images/pic5w.png",
+        "/images/pic6w.png",
+      ],
+      icons: [<FaGithub size={22} key="gh" />],
       video: "",
     },
     {
       name: "Expense Tracker",
       tools: ["Python", "pandas", "tkinter"],
       link: "https://github.com/joseanralat49/expense_tracker/tree/main",
-      images: ["/images/exp1.png","/images/exp2.png"],
-      icons: [<FaGithub size={22}/>],
+      images: ["/images/exp1.png", "/images/exp2.png"],
+      icons: [<FaGithub size={22} key="gh" />],
       video: "",
     },
     {
-      name:"Personal Portfolio Website",
-      tools:["React", "Tailwind CSS", "JavaScript", "HTML"],
-      link: "",
-      images:[],
-      icons:[<FaExternalLinkAlt size={20}/>, <FaGithub size={22}/>],
+      name: "Personal Portfolio Website",
+      tools: ["React", "Tailwind CSS", "JavaScript", "HTML"],
+      link: "https://josean-ralat-portfolio.vercel.app",
+      images: [],
+      icons: [
+        <FaExternalLinkAlt size={20} key="ext" />,
+        <FaGithub size={22} key="gh" />,
+      ],
       video: "/personalportfoliovid.mp4",
-    }
+    },
   ];
 
   return (
-    <section id="projects" className=" text-white py-4">
+    <section id="projects" className="text-white py-4">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-semibold mb-6">Projects</h2>
 
@@ -50,16 +61,18 @@ function Projects() {
                   rel="noopener noreferrer"
                   className="text-gray-30 flex gap-2"
                 >
-                  {project.icons.map((icon,i) => (
-                    <span 
-                    key={i}
-                    className="hover:text-green-500 transition-colors"
-                    >{icon}</span>
+                  {project.icons.map((icon, i) => (
+                    <span
+                      key={i}
+                      className="hover:text-green-500 transition-colors"
+                    >
+                      {icon}
+                    </span>
                   ))}
                 </a>
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {project.tools.map((tool) => (
                   <span
                     key={tool}
@@ -70,41 +83,66 @@ function Projects() {
                 ))}
               </div>
 
-              <div className="mt-4 max-h-64 opacity-100 overflow-hidden
-                md:max-h-0 md:opacity-0 md:group-hover:max-h-64 md:group-hover:opacity-100">
-                <div className="flex gap-2">
-                  {project.images.map((image) => (
-                    <img
-                    key={image}
-                    src={image}
-                    alt={project.name}
-                    className="w-1/2 h-64 object-contain"
-                    onClick={()=> setZoomImage(image)}
-                  />
-                  ))}
-                  {project.video &&
-                    <video
-                  autoPlay 
-                  loop
-                  controls
-                    src={project.video}
-                    alt={project.name}
-                    className="w-full h-auto"
-                  />}
+              {project.images.length > 0 && (
+                <div className="mt-4 overflow-hidden">
+                  <div
+                    className="
+                      grid grid-cols-2 gap-2
+                      max-h-[400px] opacity-100
+                      md:max-h-0 md:opacity-0
+                      md:group-hover:max-h-[400px] md:group-hover:opacity-100
+                      transition-all duration-300
+                    "
+                  >
+                    {project.images.map((image) => (
+                      <img
+                        key={image}
+                        src={image}
+                        alt={project.name}
+                        className="w-full h-40 object-cover rounded-md border border-zinc-800 cursor-pointer"
+                        onClick={() => setZoomImage(image)}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
+              {project.video && (
+                <div className="mt-4 overflow-hidden">
+                  <div
+                    className="
+                      max-h-[400px] opacity-100
+                      md:max-h-0 md:opacity-0
+                      md:group-hover:max-h-[400px] md:group-hover:opacity-100
+                      transition-all duration-300
+                    "
+                  >
+                    <video
+                      src={project.video}
+                      autoPlay
+                      loop
+                      muted
+                      controls
+                      className="w-full h-auto rounded-md border border-zinc-800"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
       </div>
+
       {zoomImage && (
-        <div className="fixed inset-0 bg-black flex items-center justify-center z-50 cursor-pointer"
-        onClick={()=>setZoomImage(null)}>
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 cursor-pointer"
+          onClick={() => setZoomImage(null)}
+        >
           <img
-          src={zoomImage}
-          alt="ZoomedImage"
-          className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-lg"/>
+            src={zoomImage}
+            alt="Zoomed"
+            className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-lg"
+          />
         </div>
       )}
     </section>
