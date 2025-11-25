@@ -35,7 +35,6 @@ function Projects() {
       images: [],
       icons: [
         <FaExternalLinkAlt size={20} key="ext" />,
-        <FaGithub size={22} key="gh" />,
       ],
       video: "/personalportfoliovid.mp4",
     },
