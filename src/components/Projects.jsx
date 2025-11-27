@@ -9,7 +9,7 @@ function Projects() {
     {
       name: "Workout Logger",
       tools: ["Flutter", "Dart", "Firebase", "Clean Architecture"],
-      link: "https://github.com/joseanralat49/workoutApp",
+      links: ["https://github.com/joseanralat49/workoutApp"],
       images: [
         "/images/pic1w.png",
         "/images/pic2w.png",
@@ -24,7 +24,7 @@ function Projects() {
     {
       name: "Expense Tracker",
       tools: ["Python", "pandas", "tkinter"],
-      link: "https://github.com/joseanralat49/expense_tracker/tree/main",
+      links: ["https://github.com/joseanralat49/expense_tracker/tree/main"],
       images: ["/images/exp1.png", "/images/exp2.png"],
       icons: [<FaGithub size={22} key="gh" />],
       video: "",
@@ -32,10 +32,11 @@ function Projects() {
     {
       name: "Personal Portfolio Website",
       tools: ["React", "Tailwind CSS", "JavaScript", "HTML"],
-      link: "https://josean-ralat-portfolio.vercel.app",
+      links: ["https://josean-ralat-portfolio.vercel.app", "https://github.com/joseanralat49/personal_portfolio"],
       images: [],
       icons: [
         <FaExternalLinkAlt size={20} key="ext" />,
+        <FaGithub size={22} key="gh"/>
       ],
       video: "/personalportfoliovid.mp4",
     },
@@ -56,22 +57,20 @@ function Projects() {
             >
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-xl font-semibold">{project.name}</h3>
-
+                <div 
+                className="flex gap-4"
+                >
+                { project.links.map((link, i) => (
                 <a
-                  href={project.link}
+                  key={link}
+                  href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-30 flex gap-2"
+                  className="hover:text-green-500 transition-colors"
                 >
-                  {project.icons.map((icon, i) => (
-                    <span
-                      key={i}
-                      className="hover:text-green-500 transition-colors"
-                    >
-                      {icon}
-                    </span>
-                  ))}
-                </a>
+                  {project.icons[i]}
+                </a>))}
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-2 mb-4">
