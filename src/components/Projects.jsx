@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function Projects() {
   const [zoomImage, setZoomImage] = useState(null);
+  const [hoveredProject, setHoveredProject] = useState(null);
 
   const projects = [
     {
@@ -46,10 +47,12 @@ function Projects() {
         <h2 className="text-3xl md:text-4xl font-semibold mb-6">Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div
               key={project.name}
               className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 md:p-7 transition-all duration-300 hover:bg-zinc-900 hover:border-zinc-700"
+              onMouseEnter={() => setHoveredProject(index)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-xl font-semibold">{project.name}</h3>
@@ -85,13 +88,16 @@ function Projects() {
               {project.images.length > 0 && (
                 <div className="mt-4 overflow-hidden">
                   <div
-                    className="
-                      grid grid-cols-2 gap-2
-                      max-h-[400px] opacity-100
-                      md:max-h-0 md:opacity-0
-                      md:group-hover:max-h-[400px] md:group-hover:opacity-100
+                    className={`
+                      ${
+                        hoveredProject === index ? "max-h-[400px] opacity-100"
+                        :
+                        "max-h-0 opacity-0"
+                      }
                       transition-all duration-300
-                    "
+                      flex
+                      `
+                    }
                   >
                     {project.images.map((image) => (
                       <img
@@ -109,12 +115,15 @@ function Projects() {
               {project.video && (
                 <div className="mt-4 overflow-hidden">
                   <div
-                    className="
-                      max-h-[400px] opacity-100
-                      md:max-h-0 md:opacity-0
-                      md:group-hover:max-h-[400px] md:group-hover:opacity-100
+                    className={`
+                      ${
+                        hoveredProject == index ? "max-h-[400px] opacity-100"
+                        :
+                        "max-h-0 opacity-0"
+                      }
                       transition-all duration-300
-                    "
+                      flex
+                    `}
                   >
                     <video
                       src={project.video}
