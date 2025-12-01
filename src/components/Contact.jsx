@@ -1,7 +1,7 @@
 import { IoIosMail } from "react-icons/io";
 import { MdOutlinePhone } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import ChatBot from "./Chatbot";
+import ChatBot from "./ChatBot";
 
 function Contact() {
   const contactInfo = [
