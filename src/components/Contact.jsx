@@ -38,7 +38,9 @@ function Contact() {
         ))}
       </div>
     </div>
+    <section id="chatbot">
     <ChatBot />
+    </section>
   </div>
 </section>
   );

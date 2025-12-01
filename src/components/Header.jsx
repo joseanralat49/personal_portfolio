@@ -1,3 +1,4 @@
+import { FaRobot } from "react-icons/fa";
 
 
 function Header(){
@@ -36,6 +37,12 @@ function Header(){
             className="text-white hover:text-green-500 transition-colors text-sm font-medium"
           >
             Contact Me
+          </a>
+          <a
+          href="#chatbot"
+          className="text-white hover:text-green-500 transition-colors text-sm font-medium"
+          >
+            <FaRobot size={22}/>
           </a>
         </div>
             </nav>
