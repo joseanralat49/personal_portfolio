@@ -1,6 +1,6 @@
 function Skills() {
   const sections = [
-    {
+ {
       title: "Mobile & Frontend",
       skills: [
         { name: "Flutter", level: 5 },
@@ -15,6 +15,7 @@ function Skills() {
       skills: [
         { name: "C/C++", level: 4 },
         { name: "Python", level: 4 },
+        { name: "Java", level: 3 },
         { name: "JavaScript", level: 3 },
         {name: "HTML", level:4},
         { name: "OOP / Data Structures", level: 4 },
@@ -24,6 +25,13 @@ function Skills() {
       title: "Backend, Data & Cloud",
       skills: [
         { name: "Firebase / Firestore", level: 4 },
+        { name: "FastAPI", level: 3 },
+        { name: "REST APIs", level: 4 },
+        { name: "Backend Development", level: 4 },
+        { name: "pandas", level: 3 },
+        { name: "NumPy", level: 3 },
+        { name: "Matplotlib", level: 3 },
+        { name: "Vercel", level: 3 },
         { name: "Git / GitHub", level: 5 },
       ],
     },
@@ -34,7 +42,9 @@ function Skills() {
         { name: "VS Code", level: 5 },
         { name: "XCode", level: 3 },
         { name: "Clean Architecture", level: 5 },
-        {name: "Microsoft Office", level: 4}
+        { name: "Microsoft Office", level: 4 },
+        { name: "BLoC", level: 4 },
+        { name: "CAD Design", level: 3 },
       ],
     },
   ];

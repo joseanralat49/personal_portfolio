@@ -41,7 +41,7 @@ function Projects() {
       video: "/personalportfoliovid.mp4",
     },
     {
-      name: "Personal Information Ai Chatbot",
+      name: "Ai Chatbot",
       tools: ["Python", "Groq API", "JSON"],
       links: ["https://github.com/joseanralat49/portfolio_chat_bot"],
       images: [],
