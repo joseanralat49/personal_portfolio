@@ -1,4 +1,4 @@
-import {Routes, Route} from "react-router-dom"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 
 import Header from './components/Header.jsx'
@@ -27,12 +27,12 @@ function Home() {
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/web-design" element={<WebDesign />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
